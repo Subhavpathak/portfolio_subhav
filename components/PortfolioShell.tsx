@@ -321,7 +321,7 @@ export function PortfolioShell() {
           <a className="btn-outline justify-center" href="/resume">
             <FileText className="h-4 w-4" /> Web Resume
           </a>
-          <a className="btn-primary justify-center" href="/resume-subhav-kumar.pdf" target="_blank" rel="noreferrer">
+          <a className="btn-primary justify-center" href="/resume_subhav_kumar.pdf" target="_blank" rel="noreferrer">
             Download PDF
           </a>
         </div>
