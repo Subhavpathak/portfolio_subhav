@@ -19,14 +19,19 @@ body {
   font-family:
     Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
-  background: #f7f4ec;
-  color: #141414;
+  background: #faf8f4;
+  color: #1e293b;
 }
 
 button,
 input,
 textarea {
   font: inherit;
+}
+
+::selection {
+  background: rgba(13, 148, 136, 0.2);
+  color: #0f172a;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -42,84 +47,80 @@ textarea {
 
 @layer components {
   .container {
-    @apply mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8;
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-6 lg:px-8;
   }
 
   .btn-primary {
-    @apply inline-flex min-h-12 items-center gap-2 rounded-md bg-mint px-5 py-3 font-semibold text-ink shadow-glow transition hover:bg-aqua focus:outline-none focus:ring-2 focus:ring-mint focus:ring-offset-2 focus:ring-offset-ink;
+    @apply inline-flex min-h-12 items-center gap-2 rounded-lg bg-accent px-6 py-3 font-semibold text-white transition-all duration-300 hover:bg-accent-hover focus:outline-none focus:ring-2 focus:ring-accent/40 focus:ring-offset-2;
   }
 
-  .btn-secondary {
-    @apply inline-flex min-h-12 items-center gap-2 rounded-md border border-white/20 bg-white/10 px-5 py-3 font-semibold text-white transition hover:border-amber hover:text-amber focus:outline-none focus:ring-2 focus:ring-amber focus:ring-offset-2 focus:ring-offset-ink;
+  .btn-outline {
+    @apply inline-flex min-h-12 items-center gap-2 rounded-lg border-2 border-primary/15 px-6 py-3 font-semibold text-primary transition-all duration-300 hover:border-accent hover:text-accent focus:outline-none;
+  }
+
+  .btn-outline-light {
+    @apply inline-flex min-h-12 items-center gap-2 rounded-lg border-2 border-white/25 px-6 py-3 font-semibold text-white/90 transition-all duration-300 hover:border-white/50 hover:text-white focus:outline-none;
   }
 
   .nav-link {
-    @apply rounded-md px-3 py-2 text-sm font-medium text-white/60 transition hover:bg-white/10 hover:text-white;
+    @apply rounded-md px-3 py-2 text-sm font-medium text-white/60 transition-colors duration-300 hover:text-white;
   }
 
   .nav-link-active {
-    @apply bg-white/10 text-mint;
+    @apply text-white;
   }
 
   .mobile-menu-btn {
-    @apply grid h-10 w-10 place-items-center rounded-md border border-white/10 text-white/80 transition hover:bg-white/10 hover:text-white;
+    @apply grid h-10 w-10 place-items-center rounded-md text-white/70 transition hover:text-white;
   }
 
-  .section-eyebrow {
-    @apply text-sm font-bold uppercase tracking-[0.22em] text-coral;
+  .section-label {
+    @apply text-sm font-semibold uppercase tracking-[0.18em] text-accent;
+  }
+
+  .section-label-light {
+    @apply text-sm font-semibold uppercase tracking-[0.18em] text-accent;
   }
 
   .card {
-    @apply rounded-lg border border-ink/10 bg-white p-6 shadow-[0_20px_60px_rgba(20,20,20,0.07)] sm:p-7;
-  }
-
-  .timeline-card {
-    @apply grid gap-6 rounded-lg border border-ink/10 bg-white p-6 shadow-[0_20px_60px_rgba(20,20,20,0.07)] sm:p-7 lg:grid-cols-[0.38fr_0.62fr];
-  }
-
-  .project-card {
-    @apply rounded-lg border border-ink/10 bg-white p-6 shadow-[0_20px_60px_rgba(20,20,20,0.07)] transition hover:-translate-y-1 hover:border-mint/60 hover:shadow-[0_24px_80px_rgba(40,215,162,0.18)] sm:p-7;
-  }
-
-  .pill {
-    @apply inline-flex rounded-full bg-mint/15 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-graphite;
+    @apply rounded-xl border border-warm bg-white p-6 shadow-card transition-all duration-300 hover:shadow-card-hover sm:p-7;
   }
 
   .tag {
-    @apply rounded-md border border-ink/10 bg-paper px-3 py-1 text-sm font-medium text-graphite/80;
+    @apply rounded-md bg-sand px-3 py-1.5 text-sm text-secondary transition-colors duration-300;
   }
 
   .filter-btn {
-    @apply min-h-10 rounded-md border border-ink/10 bg-white px-4 py-2 text-sm font-semibold text-graphite/70 transition hover:border-mint hover:text-ink;
+    @apply min-h-10 rounded-lg border border-warm px-4 py-2 text-sm font-medium text-secondary transition-all duration-300 hover:border-accent hover:text-accent;
   }
 
   .filter-btn-active {
-    @apply border-ink bg-ink text-white hover:text-white;
-  }
-
-  .icon-box {
-    @apply grid h-12 w-12 shrink-0 place-items-center rounded-md bg-ink text-mint;
-  }
-
-  .icon-box svg {
-    @apply h-6 w-6;
+    @apply border-accent bg-accent/10 text-accent;
   }
 
   .resume-link {
-    @apply flex min-h-12 items-center justify-between gap-4 rounded-md border border-ink/10 bg-paper px-4 py-3 font-medium text-graphite transition hover:border-mint hover:text-ink;
+    @apply flex min-h-12 items-center justify-between gap-4 rounded-lg border border-warm bg-white px-4 py-3 text-secondary shadow-card transition-all duration-300 hover:border-accent hover:text-accent;
   }
 
   .mini-link {
-    @apply inline-flex items-center gap-1 rounded-md border border-ink/10 bg-paper px-2.5 py-1 text-xs font-semibold text-graphite transition hover:border-coral hover:text-coral;
+    @apply inline-flex items-center gap-1 rounded-md bg-sand px-2.5 py-1 text-xs font-medium text-secondary transition-all duration-300 hover:text-accent;
+  }
+
+  .social-icon {
+    @apply grid h-11 w-11 place-items-center rounded-full border-2 border-white/25 text-white/80 transition-all duration-300 hover:border-accent hover:bg-accent hover:text-white;
+  }
+
+  .social-link-light {
+    @apply inline-flex min-h-11 items-center gap-2 rounded-lg border border-warm px-4 py-2 font-medium text-secondary transition-all duration-300 hover:border-accent hover:text-accent;
   }
 
   .resume-top-link,
   .print-button {
-    @apply inline-flex min-h-11 items-center gap-2 rounded-md border border-ink/10 bg-white px-4 py-2 font-semibold text-graphite shadow-[0_12px_36px_rgba(20,20,20,0.08)] transition hover:border-mint hover:text-ink;
+    @apply inline-flex min-h-11 items-center gap-2 rounded-lg border border-warm bg-white px-4 py-2 font-medium text-secondary shadow-card transition-all duration-300 hover:border-accent hover:text-accent;
   }
 
   .resume-inline {
-    @apply inline-flex items-center gap-1.5 font-medium text-graphite/75;
+    @apply inline-flex items-center gap-1.5 font-medium text-secondary;
   }
 
   .resume-row {
@@ -127,11 +128,11 @@ textarea {
   }
 
   .resume-item-title {
-    @apply font-semibold text-ink;
+    @apply font-semibold text-primary;
   }
 
   .resume-date {
-    @apply text-sm font-semibold text-graphite/60 sm:text-right;
+    @apply text-sm font-medium text-tertiary sm:text-right;
   }
 
   .resume-block {
@@ -139,19 +140,15 @@ textarea {
   }
 
   .resume-list {
-    @apply mt-3 list-disc space-y-2 pl-5 leading-7 text-graphite/80;
+    @apply mt-3 list-disc space-y-2 pl-5 leading-7 text-secondary;
   }
 
   .resume-cert-link {
-    @apply inline-flex items-center justify-between gap-3 rounded-md border border-ink/10 bg-paper px-4 py-3 font-medium text-graphite transition hover:border-mint hover:text-ink;
-  }
-
-  .social-link {
-    @apply inline-flex min-h-11 items-center gap-2 rounded-md border border-white/15 px-4 py-2 font-semibold text-white/80 transition hover:border-mint hover:text-mint;
+    @apply inline-flex items-center justify-between gap-3 rounded-lg border border-warm bg-white px-4 py-3 text-secondary shadow-card transition-all duration-300 hover:border-accent hover:text-accent;
   }
 
   .contact-form {
-    @apply rounded-lg border border-white/10 bg-white/10 p-5 shadow-line backdrop-blur sm:p-7;
+    @apply rounded-xl border border-white/10 bg-white/[0.06] p-5 backdrop-blur-sm sm:p-7;
   }
 
   .contact-form label {
@@ -159,11 +156,11 @@ textarea {
   }
 
   .contact-form span {
-    @apply mb-2 block text-sm font-semibold text-white/75;
+    @apply mb-2 block text-sm font-medium text-white/50;
   }
 
   .contact-form input,
   .contact-form textarea {
-    @apply w-full rounded-md border border-white/10 bg-ink/70 px-4 py-3 text-white outline-none transition placeholder:text-white/40 focus:border-mint focus:ring-2 focus:ring-mint/30;
+    @apply w-full rounded-lg border border-white/15 bg-white/[0.06] px-4 py-3 text-white outline-none transition-all duration-300 placeholder:text-white/30 focus:border-accent;
   }
 }
