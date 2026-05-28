@@ -41,8 +41,8 @@ export const profile = {
   quickStats: [
     { label: "CGPA", value: "8.99" },
     { label: "DSA problems", value: "400+" },
-    { label: "Amazon ML", value: "Top 1200" },
-    { label: "Research paper", value: "ICCSE 2026" }
+    { label: "Amazon ML Challenge", value: "Top 1200" },
+    { label: "Research paper accepted", value: "ICCSE 2026" }
   ]
 };
 
@@ -144,17 +144,17 @@ export const projects: Project[] = [
 
 export const skillGroups = [
   {
-    title: "Intelligence Layer",
+    title: "AI & Machine Learning",
     description: "Systems for language, vision, and neural model evaluation.",
     skills: ["PyTorch", "TensorFlow", "Scikit-learn", "Transformers", "NLP", "Computer Vision", "LoRA"]
   },
   {
-    title: "Application Layer",
+    title: "Software Development",
     description: "Product-grade web apps, APIs, and analytics workflows.",
     skills: ["React", "Next.js", "Node.js", "Express", "FastAPI", "Django", "REST APIs", "Tailwind CSS"]
   },
   {
-    title: "Infrastructure Layer",
+    title: "Cloud & Infrastructure",
     description: "Deployment, data, and experiment execution environments.",
     skills: ["Docker", "Linux", "AWS", "MongoDB", "PostgreSQL", "Git", "HPC/GPU Clusters"]
   },
