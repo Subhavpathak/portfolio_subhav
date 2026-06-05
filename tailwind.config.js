@@ -8,20 +8,23 @@ const config = {
   theme: {
     extend: {
       colors: {
-        dark: "#111827",
-        cream: "#faf8f4",
-        sand: "#f3efe6",
-        primary: "#1e293b",
-        secondary: "#64748b",
-        tertiary: "#94a3b8",
-        accent: "#0d9488",
-        "accent-hover": "#0f766e",
-        highlight: "#f97066",
-        warm: "#e5e1d8"
+        dark: "#141018",
+        cream: "#fbf7ef",
+        sand: "#eee5d7",
+        primary: "#211a18",
+        secondary: "#65584f",
+        tertiary: "#958579",
+        accent: "#b5642f",
+        "accent-hover": "#8f4322",
+        highlight: "#df5b48",
+        warm: "#d9cfc0",
+        ember: "#b45309",
+        porcelain: "#fffdf8"
       },
       boxShadow: {
-        card: "0 1px 3px rgba(0,0,0,0.06), 0 6px 16px rgba(0,0,0,0.04)",
-        "card-hover": "0 4px 12px rgba(0,0,0,0.08), 0 12px 28px rgba(0,0,0,0.06)"
+        card: "0 1px 1px rgba(24,34,53,0.04), 0 14px 36px rgba(24,34,53,0.08)",
+        "card-hover": "0 10px 22px rgba(24,34,53,0.10), 0 24px 54px rgba(24,34,53,0.12)",
+        glow: "0 18px 50px rgba(181,100,47,0.24)"
       }
     }
   },

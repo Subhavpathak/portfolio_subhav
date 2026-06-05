@@ -4,6 +4,7 @@
 
 :root {
   color-scheme: light;
+  --grain: radial-gradient(circle at 1px 1px, rgba(33, 26, 24, 0.06) 1px, transparent 0);
 }
 
 * {
@@ -19,8 +20,10 @@ body {
   font-family:
     Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
-  background: #faf8f4;
-  color: #1e293b;
+  background: linear-gradient(180deg, #fbf7ef 0%, #f6efe3 46%, #fbf7ef 100%);
+  color: #211a18;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
 }
 
 button,
@@ -30,8 +33,8 @@ textarea {
 }
 
 ::selection {
-  background: rgba(13, 148, 136, 0.2);
-  color: #0f172a;
+  background: rgba(180, 83, 9, 0.24);
+  color: #141018;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -51,63 +54,63 @@ textarea {
   }
 
   .btn-primary {
-    @apply inline-flex min-h-12 items-center gap-2 rounded-lg bg-accent px-6 py-3 font-semibold text-white transition-all duration-300 hover:bg-accent-hover focus:outline-none focus:ring-2 focus:ring-accent/40 focus:ring-offset-2;
+    @apply inline-flex min-h-12 items-center gap-2 rounded-md border border-accent/30 bg-accent px-6 py-3 font-semibold text-white shadow-glow transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent-hover focus:outline-none focus:ring-2 focus:ring-accent/40 focus:ring-offset-2;
   }
 
   .btn-outline {
-    @apply inline-flex min-h-12 items-center gap-2 rounded-lg border-2 border-primary/15 px-6 py-3 font-semibold text-primary transition-all duration-300 hover:border-accent hover:text-accent focus:outline-none;
+    @apply inline-flex min-h-12 items-center gap-2 rounded-md border border-primary/20 bg-white/60 px-6 py-3 font-semibold text-primary shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-accent hover:bg-white hover:text-accent focus:outline-none;
   }
 
   .btn-outline-light {
-    @apply inline-flex min-h-12 items-center gap-2 rounded-lg border-2 border-white/25 px-6 py-3 font-semibold text-white/90 transition-all duration-300 hover:border-white/50 hover:text-white focus:outline-none;
+    @apply inline-flex min-h-12 items-center gap-2 rounded-md border border-white/25 bg-white/[0.04] px-6 py-3 font-semibold text-white/90 transition-all duration-300 hover:-translate-y-0.5 hover:border-white/50 hover:bg-white/[0.08] hover:text-white focus:outline-none;
   }
 
   .nav-link {
-    @apply rounded-md px-3 py-2 text-sm font-medium text-white/60 transition-colors duration-300 hover:text-white;
+    @apply rounded-md px-3 py-2 text-sm font-medium text-white/60 transition-all duration-300 hover:bg-white/[0.06] hover:text-white;
   }
 
   .nav-link-active {
-    @apply text-white;
+    @apply bg-white/[0.08] text-white shadow-[inset_0_-1px_0_rgba(181,100,47,0.72)];
   }
 
   .mobile-menu-btn {
-    @apply grid h-10 w-10 place-items-center rounded-md text-white/70 transition hover:text-white;
+    @apply grid h-10 w-10 place-items-center rounded-md border border-white/10 bg-white/[0.04] text-white/75 transition hover:border-accent/50 hover:text-white;
   }
 
   .section-label {
-    @apply text-sm font-semibold uppercase tracking-[0.18em] text-accent;
+    @apply text-sm font-bold uppercase tracking-[0.18em] text-accent;
   }
 
   .section-label-light {
-    @apply text-sm font-semibold uppercase tracking-[0.18em] text-accent;
+    @apply text-sm font-bold uppercase tracking-[0.18em] text-accent;
   }
 
   .card {
-    @apply rounded-xl border border-warm bg-white p-6 shadow-card transition-all duration-300 hover:shadow-card-hover sm:p-7;
+    @apply rounded-lg border border-warm/80 bg-porcelain/95 p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-accent/35 hover:shadow-card-hover sm:p-7;
   }
 
   .tag {
-    @apply rounded-md bg-sand px-3 py-1.5 text-sm text-secondary transition-colors duration-300;
+    @apply rounded-md border border-warm/70 bg-sand/70 px-3 py-1.5 text-sm font-medium text-secondary transition-colors duration-300 hover:border-accent/30 hover:text-primary;
   }
 
   .filter-btn {
-    @apply min-h-10 rounded-lg border border-warm px-4 py-2 text-sm font-medium text-secondary transition-all duration-300 hover:border-accent hover:text-accent;
+    @apply min-h-10 rounded-md border border-warm bg-white/40 px-4 py-2 text-sm font-semibold text-secondary transition-all duration-300 hover:-translate-y-0.5 hover:border-accent hover:bg-white hover:text-accent;
   }
 
   .filter-btn-active {
-    @apply border-accent bg-accent/10 text-accent;
+    @apply border-accent bg-accent text-white shadow-glow;
   }
 
   .resume-link {
-    @apply flex min-h-12 items-center justify-between gap-4 rounded-lg border border-warm bg-white px-4 py-3 text-secondary shadow-card transition-all duration-300 hover:border-accent hover:text-accent;
+    @apply flex min-h-12 items-center justify-between gap-4 rounded-lg border border-warm/80 bg-porcelain/95 px-4 py-3 text-secondary shadow-card transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/45 hover:text-accent hover:shadow-card-hover;
   }
 
   .mini-link {
-    @apply inline-flex items-center gap-1 rounded-md bg-sand px-2.5 py-1 text-xs font-medium text-secondary transition-all duration-300 hover:text-accent;
+    @apply inline-flex items-center gap-1 rounded-md border border-warm/60 bg-sand/70 px-2.5 py-1 text-xs font-semibold text-secondary transition-all duration-300 hover:border-accent/40 hover:text-accent;
   }
 
   .social-icon {
-    @apply grid h-11 w-11 place-items-center rounded-full border-2 border-white/25 text-white/80 transition-all duration-300 hover:border-accent hover:bg-accent hover:text-white;
+    @apply grid h-11 w-11 place-items-center rounded-full border border-white/20 bg-white/[0.04] text-white/80 transition-all duration-300 hover:-translate-y-0.5 hover:border-accent hover:bg-accent hover:text-white hover:shadow-glow;
   }
 
   .social-link-light {
@@ -116,7 +119,7 @@ textarea {
 
   .resume-top-link,
   .print-button {
-    @apply inline-flex min-h-11 items-center gap-2 rounded-lg border border-warm bg-white px-4 py-2 font-medium text-secondary shadow-card transition-all duration-300 hover:border-accent hover:text-accent;
+    @apply inline-flex min-h-11 items-center gap-2 rounded-md border border-warm bg-white px-4 py-2 font-medium text-secondary shadow-card transition-all duration-300 hover:-translate-y-0.5 hover:border-accent hover:text-accent;
   }
 
   .resume-inline {
@@ -144,11 +147,11 @@ textarea {
   }
 
   .resume-cert-link {
-    @apply inline-flex items-center justify-between gap-3 rounded-lg border border-warm bg-white px-4 py-3 text-secondary shadow-card transition-all duration-300 hover:border-accent hover:text-accent;
+    @apply inline-flex items-center justify-between gap-3 rounded-lg border border-warm bg-white px-4 py-3 text-secondary shadow-card transition-all duration-300 hover:-translate-y-0.5 hover:border-accent hover:text-accent;
   }
 
   .contact-form {
-    @apply rounded-xl border border-white/10 bg-white/[0.06] p-5 backdrop-blur-sm sm:p-7;
+    @apply rounded-lg border border-white/10 bg-white/[0.07] p-5 shadow-[0_24px_70px_rgba(0,0,0,0.24)] backdrop-blur-sm sm:p-7;
   }
 
   .contact-form label {
@@ -161,6 +164,81 @@ textarea {
 
   .contact-form input,
   .contact-form textarea {
-    @apply w-full rounded-lg border border-white/15 bg-white/[0.06] px-4 py-3 text-white outline-none transition-all duration-300 placeholder:text-white/30 focus:border-accent;
+    @apply w-full rounded-md border border-white/15 bg-white/[0.06] px-4 py-3 text-white outline-none transition-all duration-300 placeholder:text-white/30 focus:border-accent focus:bg-white/[0.09];
+  }
+}
+
+@layer utilities {
+  .bg-cream {
+    background:
+      linear-gradient(180deg, rgba(255, 253, 248, 0.82), rgba(251, 247, 239, 0.92)),
+      var(--grain);
+    background-size: auto, 18px 18px;
+  }
+
+  .bg-sand {
+    background:
+      linear-gradient(135deg, rgba(238, 229, 215, 0.94), rgba(251, 247, 239, 0.84)),
+      var(--grain);
+    background-size: auto, 18px 18px;
+  }
+
+  .hero-surface {
+    background:
+      radial-gradient(circle at 20% 18%, rgba(181, 100, 47, 0.22), transparent 31%),
+      radial-gradient(circle at 82% 24%, rgba(117, 43, 51, 0.22), transparent 33%),
+      linear-gradient(125deg, #141018 0%, #211622 45%, #171218 100%),
+      linear-gradient(90deg, rgba(245, 219, 178, 0.08) 1px, transparent 1px),
+      linear-gradient(0deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: auto, auto, auto, 92px 92px, 92px 92px;
+  }
+
+  .hero-kicker {
+    @apply inline-flex rounded-full border border-accent/25 bg-accent/10 px-4 py-2 text-sm font-semibold text-accent shadow-[0_0_0_1px_rgba(255,255,255,0.03)];
+  }
+
+  .hero-name {
+    color: #f0b36e;
+    text-shadow: 0 0 30px rgba(181, 100, 47, 0.22);
+  }
+
+  .stat-card {
+    @apply rounded-lg border border-white/10 bg-white/[0.055] px-4 py-3 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/40 hover:bg-white/[0.08];
+  }
+
+  .profile-frame {
+    @apply relative h-[286px] w-[286px] overflow-hidden rounded-full border border-accent/35 bg-white/[0.04] p-2 shadow-[0_24px_70px_rgba(0,0,0,0.34),0_0_0_10px_rgba(255,255,255,0.035)] sm:h-[350px] sm:w-[350px];
+  }
+
+  .profile-image {
+    @apply h-full w-full rounded-full object-cover saturate-[1.06] contrast-[1.04];
+  }
+
+  .site-header {
+    @apply fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-dark/90 backdrop-blur-xl;
+  }
+
+  .mobile-panel {
+    @apply border-t border-white/10 bg-dark/95 px-5 py-4 shadow-[0_22px_60px_rgba(0,0,0,0.28)] lg:hidden;
+  }
+
+  .mobile-nav-link {
+    @apply rounded-md border border-transparent px-3 py-3 text-sm font-medium text-white/65 transition-colors hover:border-white/10 hover:bg-white/[0.05] hover:text-white;
+  }
+
+  .section-title {
+    @apply mt-3 text-3xl font-bold leading-snug text-primary sm:text-4xl;
+  }
+}
+
+@media (max-width: 640px) {
+  .btn-primary,
+  .btn-outline,
+  .btn-outline-light {
+    @apply w-full justify-center px-5;
+  }
+
+  .card {
+    @apply p-5;
   }
 }
