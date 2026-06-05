@@ -16,7 +16,7 @@ export default function ResumePage() {
         <div className="mb-5 flex flex-wrap items-center justify-between gap-3 print:hidden">
           <Link href="/#home" className="resume-top-link"><ArrowLeft className="h-4 w-4" /> Back to portfolio</Link>
           <div className="flex flex-wrap gap-3">
-            <a className="resume-top-link" href="/resume_subhav_kumar.pdf" target="_blank" rel="noreferrer"><FileText className="h-4 w-4" /> View PDF</a>
+            <a className="resume-top-link" href="/resume_subhav.pdf" target="_blank" rel="noreferrer"><FileText className="h-4 w-4" /> View PDF</a>
             <ResumeActions />
           </div>
         </div>
